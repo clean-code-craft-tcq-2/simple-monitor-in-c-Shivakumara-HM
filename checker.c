@@ -45,7 +45,18 @@ int IsChargRateOK(float chargeRate)
   return 1;
 }
 
-int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+/*Code under Test*/
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK)(float),int (*fpIsSocOK)(float),int (*fpIsChargRateOK)(float))
+{
+  int TempStatus = fpIsTemperatureOK(tempertaure);
+  int SocStatus  =  fpIsSocOK(soc);
+  int ChargeRateStatus =  fpIsChargRateOK(chargerate);
+  return (TempStatus && SocStatus && ChargeRateStatus);
+}
+
+/*Testing environemt*/
+int main() 
+{
+  assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK));
+  assert(!batteryIsOk(50, 85, 0, &IsTemperatureOK, &IsSocOK, &IsChargRateOK));
 }
