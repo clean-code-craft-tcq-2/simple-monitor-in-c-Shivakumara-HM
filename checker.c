@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
- 
+
+/*  pure function to check Temperature range */
 int IsTemperatureOK(float temperature)
  {
   int TemperatureOK;
@@ -16,7 +17,9 @@ int IsTemperatureOK(float temperature)
   }
   return TemperatureOK;
 }
-    
+
+
+/*  pure function to check soc range */
 int IsSocOK(float soc)
 {
   int SocOK;
@@ -30,7 +33,8 @@ int IsSocOK(float soc)
     SocOK = 1;
     printf("Soc is inrange");
  }
- 
+
+/*  pure function to check charge rate */ 
 int IsChargRateOK(float chargeRate)
 {
   if(chargeRate >= 0.8)
