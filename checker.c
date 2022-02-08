@@ -33,7 +33,9 @@ int IsSocOK(float soc)
   {
     SocOK = 1;
     printf("Soc is inrange");
- }
+  }
+  return SocOK;
+} 
 
 
  /*  pure function to check charge rate */ 
