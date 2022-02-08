@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <assert.h>
+#include "checker.h"
 
 /*  pure function to check Temperature range */
 int IsTemperatureOK(float temperature)
  {
   int TemperatureOK;
-  if(temperature < 0 || temperature > 45)
+  if(temperature < MIN_THRESHOLD_BATT_TEMP  || temperature > MAX_THRESHOLD_BATT_TEMP)
   {
     TemperatureOK = 0;
     printf("Temperature out of range!\n");
@@ -23,7 +24,7 @@ int IsTemperatureOK(float temperature)
 int IsSocOK(float soc)
 {
   int SocOK;
-  if(soc < 20 || soc > 80)
+  if(soc < MIN_THRESHOLD_BATT_SoC  || soc > MAX_THRESHOLD_BATT_SoC)
   {
     SocOK = 0;
     printf("State of Charge out of range!\n");
@@ -34,10 +35,11 @@ int IsSocOK(float soc)
     printf("Soc is inrange");
  }
 
-/*  pure function to check charge rate */ 
+
+ /*  pure function to check charge rate */ 
 int IsChargRateOK(float chargeRate)
 {
-  if(chargeRate >= 0.8)
+  if(chargeRate >= MAX_THRESHOLD_BATT_CHARGE_RATE)
   {
     printf("Charge Rate out of range!\n");
     return 0;
