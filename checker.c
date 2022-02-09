@@ -72,7 +72,7 @@ char* FindSocHIGHORLOW(float soc){
 }
 
 /* pure function to display string */
-void display(char *(fpdisplaystring)(float))
+void displaystring(char *(fpdisplaystring)(float))
 {
   printf("%s", &fpdisplaystring);
 }
