@@ -48,7 +48,8 @@ int IsChargRateOK(float chargeRate)
 }
 
 /* pure function to check temperature High or Low */
-void FindTempertaureHIGHORLOW(float temperature){
+void FindTempertaureHIGHORLOW(float temperature)
+{
   char* TempertaureHIGHORLOW;
   if(temperature < 0){
     TempertaureHIGHORLOW = "LOWTemperature";
@@ -60,7 +61,8 @@ void FindTempertaureHIGHORLOW(float temperature){
 }
 
 /* pure function to check soc High or Low */
-void FindSocHIGHORLOW(float soc){
+void FindSocHIGHORLOW(float soc)
+{
   char* SocHIGHORLOW;
   if(soc < 20){
     SocHIGHORLOW = "LOWSoc";
