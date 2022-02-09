@@ -8,4 +8,4 @@ int IsTemperatureOK(float temperature);
 int IsSocOK(float soc);
 int IsChargRateOK(float chargeRate);
 int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK)(float),int (*fpIsSocOK)(float),int (*fpIsChargRateOK)(float));
-void displaystring(char* fpdisplaystring);
+void displaystring(char *fpdisplaystring);
