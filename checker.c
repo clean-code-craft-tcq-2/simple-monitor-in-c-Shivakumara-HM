@@ -19,7 +19,6 @@ int IsTemperatureOK(float temperature)
   return TemperatureOK;
 }
 
-
 /*  pure function to check soc range */
 int IsSocOK(float soc)
 {
@@ -37,7 +36,6 @@ int IsSocOK(float soc)
   return SocOK;
 } 
 
-
  /*  pure function to check charge rate */ 
 int IsChargRateOK(float chargeRate)
 {
@@ -47,6 +45,36 @@ int IsChargRateOK(float chargeRate)
     return 0;
   }
   return 1;
+}
+
+/* pure function to check temperature High or Low */
+char* FindTempertaureHIGHORLOW(float temperature){
+  char* TempertaureHIGHORLOW;
+  if(temperature < 0){
+    TempertaureHIGHORLOW = "LOWTemperature";
+    }
+  else if(temperature > 45){
+   TempertaureHIGHORLOW = "HIGHTemperature";
+    }
+  displaystring(&TempertaureHIGHORLOW);
+}
+
+/* pure function to check soc High or Low */
+char* FindSocHIGHORLOW(float soc){
+  char* SocHIGHORLOW;
+  if(soc < 20){
+    SocHIGHORLOW = "LOWSoc";
+    }
+  else if(soc > 80){
+   SocHIGHORLOW = "HIGHSoc";
+    }
+  displaystring(&SocHIGHORLOW);
+}
+
+/* pure function to display string */
+void display(char *(fpdisplaystring)(float))
+{
+  printf(&fpdisplaystring);
 }
 
 /*Code under Test*/
