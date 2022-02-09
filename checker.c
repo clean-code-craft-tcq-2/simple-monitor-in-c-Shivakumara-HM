@@ -56,7 +56,7 @@ char* FindTempertaureHIGHORLOW(float temperature){
   else if(temperature > 45){
    TempertaureHIGHORLOW = "HIGHTemperature";
     }
-  displaystring(&TempertaureHIGHORLOW);
+  displaystring(TempertaureHIGHORLOW);
 }
 
 /* pure function to check soc High or Low */
@@ -68,7 +68,7 @@ char* FindSocHIGHORLOW(float soc){
   else if(soc > 80){
    SocHIGHORLOW = "HIGHSoc";
     }
-  displaystring(&SocHIGHORLOW);
+  displaystring(SocHIGHORLOW);
 }
 
 /* pure function to display string */
