@@ -6,16 +6,18 @@
 int IsTemperatureOK(float temperature)
  {
   int TemperatureOK;
+  char* TemperatureRANGE;
   if(temperature < MIN_THRESHOLD_BATT_TEMP  || temperature > MAX_THRESHOLD_BATT_TEMP)
   {
     TemperatureOK = 0;
-    printf("Temperature out of range!\n");
+    TemperatureRANGE = "Temperature out of range";
   }
   else
   {
      TemperatureOK = 1;
-     printf("Temperature is inrange");
+     TemperatureRANGE = "Temperature is inrange";
   }
+  displaystring(TemperatureRANGE);
   return TemperatureOK;
 }
 
@@ -23,16 +25,18 @@ int IsTemperatureOK(float temperature)
 int IsSocOK(float soc)
 {
   int SocOK;
+  char* socRANGE;
   if(soc < MIN_THRESHOLD_BATT_SoC  || soc > MAX_THRESHOLD_BATT_SoC)
   {
     SocOK = 0;
-    printf("State of Charge out of range!\n");
+    socRANG = "State of Charge out of range";
   }
   else
   {
     SocOK = 1;
-    printf("Soc is inrange");
+    socRANGE = "Soc is inrange";
   }
+  displaystring(socRANGE);
   return SocOK;
 } 
 
