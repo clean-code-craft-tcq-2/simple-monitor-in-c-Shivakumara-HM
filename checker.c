@@ -51,10 +51,10 @@ int IsChargRateOK(float chargeRate)
 void FindTempertaureHIGHORLOW(float temperature)
 {
   char* TempertaureHIGHORLOW;
-  if(temperature < 0){
+  if(temperature < MIN_THRESHOLD_BATT_TEMP){
     TempertaureHIGHORLOW = "LOWTemperature";
     }
-  else if(temperature > 45){
+  else if(temperature > MAX_THRESHOLD_BATT_TEMP){
    TempertaureHIGHORLOW = "HIGHTemperature";
     }
   displaystring(TempertaureHIGHORLOW);
@@ -64,10 +64,10 @@ void FindTempertaureHIGHORLOW(float temperature)
 void FindSocHIGHORLOW(float soc)
 {
   char* SocHIGHORLOW;
-  if(soc < 20){
+  if(soc < MIN_THRESHOLD_BATT_SoC){
     SocHIGHORLOW = "LOWSoc";
     }
-  else if(soc > 80){
+  else if(soc > MAX_THRESHOLD_BATT_SoC){
    SocHIGHORLOW = "HIGHSoc";
     }
   displaystring(SocHIGHORLOW);
@@ -88,7 +88,7 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemper
   return (TempStatus && SocStatus && ChargeRateStatus);
 }
 
-/*Testing environemt*/
+/*Testing environment*/
 int main() 
 {
   assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK));
