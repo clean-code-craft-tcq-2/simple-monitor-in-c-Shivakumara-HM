@@ -55,12 +55,14 @@ int IsChargRateOK(float chargeRate)
 void findTempertaureHIGHORLOW(float temperature)
 {
   char* TempertaureHIGHORLOW;
-  if(temperature < MIN_THRESHOLD_BATT_TEMP){
+  if(temperature < MIN_THRESHOLD_BATT_TEMP)
+  {
     TempertaureHIGHORLOW = "LOWTemperature";
-    }
-  else if(temperature > MAX_THRESHOLD_BATT_TEMP){
+  }
+  else if(temperature > MAX_THRESHOLD_BATT_TEMP)
+  {
    TempertaureHIGHORLOW = "HIGHTemperature";
-    }
+  }
   displaystring(TempertaureHIGHORLOW);
 }
 
@@ -68,12 +70,14 @@ void findTempertaureHIGHORLOW(float temperature)
 void findSocHIGHORLOW(float soc)
 {
   char* SocHIGHORLOW;
-  if(soc < MIN_THRESHOLD_BATT_SoC){
+  if(soc < MIN_THRESHOLD_BATT_SoC)
+  {
     SocHIGHORLOW = "LOWSoc";
-    }
-  else if(soc > MAX_THRESHOLD_BATT_SoC){
+  }
+  else if(soc > MAX_THRESHOLD_BATT_SoC)
+  {
    SocHIGHORLOW = "HIGHSoc";
-    }
+  }
   displaystring(SocHIGHORLOW);
 }
 
