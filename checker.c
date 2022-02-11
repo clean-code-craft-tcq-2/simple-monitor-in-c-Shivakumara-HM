@@ -29,7 +29,7 @@ int IsSocOK(float soc)
   if(soc < MIN_THRESHOLD_BATT_SoC  || soc > MAX_THRESHOLD_BATT_SoC)
   {
     SocOK = 0;
-    socRANG = "State of Charge out of range";
+    socRANGE = "State of Charge out of range";
   }
   else
   {
