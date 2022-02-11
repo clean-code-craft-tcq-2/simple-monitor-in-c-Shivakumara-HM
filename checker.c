@@ -89,7 +89,7 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemper
   int TempStatus = fpIsTemperatureOK(tempertaure);
   int SocStatus  =  fpIsSocOK(soc);
   int ChargeRateStatus =  fpIsChargRateOK(chargerate);
-  return (TempStatus && SocStatus && ChargeRateStatus) == expectedValue));
+  return ((TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
 }
 
 /*Testing environment*/
