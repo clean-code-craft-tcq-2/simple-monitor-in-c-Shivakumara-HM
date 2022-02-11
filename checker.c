@@ -52,7 +52,7 @@ int IsChargRateOK(float chargeRate)
 }
 
 /* pure function to check temperature High or Low */
-void FindTempertaureHIGHORLOW(float temperature)
+void findTempertaureHIGHORLOW(float temperature)
 {
   char* TempertaureHIGHORLOW;
   if(temperature < MIN_THRESHOLD_BATT_TEMP){
@@ -65,7 +65,7 @@ void FindTempertaureHIGHORLOW(float temperature)
 }
 
 /* pure function to check soc High or Low */
-void FindSocHIGHORLOW(float soc)
+void findSocHIGHORLOW(float soc)
 {
   char* SocHIGHORLOW;
   if(soc < MIN_THRESHOLD_BATT_SoC){
