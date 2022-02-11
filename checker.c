@@ -84,17 +84,17 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK)(float),int (*fpIsSocOK)(float),int (*fpIsChargRateOK)(float))
+int batteryIsOk(float tempertaure, float soc, float chargerate, int *fpIsTemperatureOK,int *fpIsSocOK,int *fpIsChargRateOK, int expectedValue)
 {
   int TempStatus = fpIsTemperatureOK(tempertaure);
   int SocStatus  =  fpIsSocOK(soc);
   int ChargeRateStatus =  fpIsChargRateOK(chargerate);
-  return (TempStatus && SocStatus && ChargeRateStatus);
+  return (TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
 }
 
 /*Testing environment*/
 int main() 
 {
-  assert(batteryIsOk(25, 70, 0.7, 1, 1,1));
-  assert(!batteryIsOk(50, 85, 0, 0, 0, 0));
+  assert(batteryIsOk(25, 70, 0.7, &fpIsTemperatureOK, &fpIsSocOK, &fpIsChargRateOK, 1));
+  assert(!batteryIsOk(50, 85, 0, &fpIsTemperatureOK, &fpIsSocOK, &fpIsChargRateOK, 0));
 }
