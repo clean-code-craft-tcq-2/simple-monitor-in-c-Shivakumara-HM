@@ -7,7 +7,7 @@
 int IsTemperatureOK(float temperature);
 int IsSocOK(float soc);
 int IsChargRateOK(float chargeRate);
-int batteryIsOk(float tempertaure, float soc, float chargerate, int *fpIsTemperatureOK,int *fpIsSocOK,int *fpIsChargRateOK, int expectedValue);
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), int (*fpIsChargRateOK) (float), int expectedValue);
 void FindTempertaureHIGHORLOW(float temperature);
 void FindSocHIGHORLOW(float soc);
 void displaystring(char *fpdisplaystring);
