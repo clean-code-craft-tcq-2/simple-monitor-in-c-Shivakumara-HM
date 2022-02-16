@@ -24,7 +24,7 @@ char* arrayOfAlertinGerman[5]=
 int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue);
 int IsTemperatureOK(float input, float lowLimit, float highLimit, int language);
 int IsSocOK(float input, float lowLimit, float highLimit, int language);
-int IsChargRateOK(float input, float lowLimit, float highLimit, int language);
+int IsChargRateOK(float input, float highLimit, int language);
 int checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
 int checkHigherThreshold(float input, float highLimit, int language);   
 void displaystring(char *fpdisplaystring);
