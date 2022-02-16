@@ -21,8 +21,8 @@ char* arrayOfAlertinGerman[5]=
 	"Batteriestatus: Hohe Warnung ",	
 	};
 
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), 
-                 int (*fpIsChargRateOK) (float), int lowLimit, int highLimit, int language, int expectedValue);
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (), int (*fpIsSocOK) (), 
+                 int (*fpIsChargRateOK) (), int lowLimit, int highLimit, int language, int expectedValue);
 int IsTemperatureOK(float input, float lowLimit, float highLimit, int language);
 int IsSocOK(float input, float lowLimit, float highLimit, int language);
 int IsChargRateOK(float input, float lowLimit, float highLimit, int language);
