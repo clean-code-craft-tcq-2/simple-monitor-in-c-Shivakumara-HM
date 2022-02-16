@@ -20,10 +20,13 @@ char* arrayOfAlertinGerman[]=
 	"Batteriestatus: Hohe Warnung ",	
 	};
 
-int IsTemperatureOK(float temperature);
-int IsSocOK(float soc);
-int IsChargRateOK(float chargeRate);
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), int (*fpIsChargRateOK) (float), int expectedValue);
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), 
+                 int (*fpIsChargRateOK) (float), int lowLimit, int highLimit, int language, int expectedValue);
+int IsTemperatureOK(float input, float lowLimit, float highLimit, int language);
+int IsSocOK(float input, float lowLimit, float highLimit, int language);
+int IsChargRateOK(float input, float lowLimit, float highLimit, int language);
+int checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
+int checkHigherThreshold(float input, float highLimit, float highLimit, int language);   
 void findTempertaureHIGHORLOW(float temperature);
 void findSocHIGHORLOW(float soc);
 void displaystring(char *fpdisplaystring);
