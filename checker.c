@@ -66,18 +66,8 @@ int checkHigherThreshold(float input, float highLimit, float highLimit, int lang
 int IsTemperatureOK(float temperature)
  {
   int TemperatureOK;
-  char* TemperatureRANGE;
-  if(temperature < MIN_THRESHOLD_BATT_TEMP  || temperature > MAX_THRESHOLD_BATT_TEMP)
-  {
-    TemperatureOK = 0;
-    TemperatureRANGE = "Temperature out of range";
-  }
-  else
-  {
-     TemperatureOK = 1;
-     TemperatureRANGE = "Temperature is inrange";
-  }
-  displaystring(TemperatureRANGE);
+  TemperatureOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
+  TemperatureOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
   return TemperatureOK;
 }
 
@@ -85,18 +75,8 @@ int IsTemperatureOK(float temperature)
 int IsSocOK(float soc)
 {
   int SocOK;
-  char* socRANGE;
-  if(soc < MIN_THRESHOLD_BATT_SoC  || soc > MAX_THRESHOLD_BATT_SoC)
-  {
-    SocOK = 0;
-    socRANGE = "State of Charge out of range";
-  }
-  else
-  {
-    SocOK = 1;
-    socRANGE = "Soc is inrange";
-  }
-  displaystring(socRANGE);
+  SocOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
+  SocOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
   return SocOK;
 } 
 
