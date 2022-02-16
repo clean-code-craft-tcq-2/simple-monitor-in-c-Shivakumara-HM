@@ -67,7 +67,7 @@ int IsTemperatureOK(float input, float lowLimit, float highLimit, int language)
  {
   int TemperatureOK;
   TemperatureOK = checkLowerThreshold(input, lowLimit, highLimit, language);
-  TemperatureOK = checkHigherThreshold(input, highLimit, highLimit, language);
+  TemperatureOK = checkHigherThreshold(input, lowLimit, highLimit, language);
   return TemperatureOK;
 }
 
@@ -76,7 +76,7 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language)
 {
   int SocOK;
   SocOK = checkLowerThreshold(input, lowLimit, highLimit, language);
-  SocOK = checkHigherThreshold(input, highLimit, highLimit, language);
+  SocOK = checkHigherThreshold(input, lowLimit, highLimit, language);
   return SocOK;
 } 
 
@@ -84,7 +84,7 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language)
 int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
 {
   int ChrgeRateOK;
-  ChrgeRateOK = checkHigherThreshold(input, highLimit, highLimit, language);
+  ChrgeRateOK = checkHigherThreshold(input, lowLimit, highLimit, language);
   return ChrgeRateOK;
 }
 
