@@ -16,7 +16,7 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
     }
     return result = 0;
   }
-  else if(input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
+  else (input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
   {
     if (language == ENGLISH)
     {
@@ -47,7 +47,7 @@ int checkHigherThreshold(float input, float highLimit, float highLimit, int lang
     }
     return result = 0;
   }
-  else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit))
+  else (input > (highLimit - (WARNINGPERCENTAGE * highLimit))
   {
     if (language == ENGLISH)
     {
@@ -66,8 +66,8 @@ int checkHigherThreshold(float input, float highLimit, float highLimit, int lang
 int IsTemperatureOK(float input, float lowLimit, float highLimit, int language)
  {
   int TemperatureOK;
-  TemperatureOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
-  TemperatureOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
+  TemperatureOK = checkLowerThreshold(input, lowLimit, highLimit, language);
+  TemperatureOK = checkHigherThreshold(input, highLimit, highLimit, language);
   return TemperatureOK;
 }
 
@@ -75,8 +75,8 @@ int IsTemperatureOK(float input, float lowLimit, float highLimit, int language)
 int IsSocOK(float input, float lowLimit, float highLimit, int language)
 {
   int SocOK;
-  SocOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
-  SocOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
+  SocOK = checkLowerThreshold(input, lowLimit, highLimit, language);
+  SocOK = checkHigherThreshold(input, highLimit, highLimit, language);
   return SocOK;
 } 
 
@@ -84,7 +84,7 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language)
 int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
 {
   int ChrgeRateOK;
-  ChrgeRateOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
+  ChrgeRateOK = checkHigherThreshold(input, highLimit, highLimit, language);
   return ChrgeRateOK;
 }
 
