@@ -88,36 +88,6 @@ int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
   return ChrgeRateOK;
 }
 
-/* pure function to check temperature High or Low */
-void findTempertaureHIGHORLOW(float temperature)
-{
-  char* TempertaureHIGHORLOW;
-  if(temperature < MIN_THRESHOLD_BATT_TEMP)
-  {
-    TempertaureHIGHORLOW = "LOWTemperature";
-  }
-  else if(temperature > MAX_THRESHOLD_BATT_TEMP)
-  {
-   TempertaureHIGHORLOW = "HIGHTemperature";
-  }
-  displaystring(TempertaureHIGHORLOW);
-}
-
-/* pure function to check soc High or Low */
-void findSocHIGHORLOW(float soc)
-{
-  char* SocHIGHORLOW;
-  if(soc < MIN_THRESHOLD_BATT_SoC)
-  {
-    SocHIGHORLOW = "LOWSoc";
-  }
-  else if(soc > MAX_THRESHOLD_BATT_SoC)
-  {
-   SocHIGHORLOW = "HIGHSoc";
-  }
-  displaystring(SocHIGHORLOW);
-}
-
 /* pure function to display string */
 void displaystring(char *fpdisplaystring)
 {
