@@ -137,6 +137,6 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemper
 /*Testing environment*/
 int main() 
 {
-  assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, ENGLISH, 1));
-  assert(!batteryIsOk(50, 85, 0, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, GERMAN, 1));
+  assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, MIN_THRESHOLD, MAX_THRESHOLD, ENGLISH, 0));
+  assert(!batteryIsOk(50, 85, 0, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, MIN_THRESHOLD, MAX_THRESHOLD, GERMAN, 0));
 }
