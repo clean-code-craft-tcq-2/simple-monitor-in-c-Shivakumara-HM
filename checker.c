@@ -16,7 +16,7 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
     }
     return result = 0;
   }
-  else (input < ((WARNINGPERCENTAGE *  highLimit)+lowLimit))
+  else if (input < ((WARNINGPERCENTAGE *  highLimit)+lowLimit))
   {
     if (language == ENGLISH)
     {
@@ -47,7 +47,7 @@ int checkHigherThreshold(float input, float lowLimit, float highLimit, int langu
     }
     return result = 0;
   }
-  else (input > (highLimit - (WARNINGPERCENTAGE * highLimit)))
+  else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit)))
   {
     if (language == ENGLISH)
     {
