@@ -27,6 +27,4 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language);
 int IsChargRateOK(float input, float lowLimit, float highLimit, int language);
 int checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
 int checkHigherThreshold(float input, float highLimit, float highLimit, int language);   
-void findTempertaureHIGHORLOW(float temperature);
-void findSocHIGHORLOW(float soc);
 void displaystring(char *fpdisplaystring);
