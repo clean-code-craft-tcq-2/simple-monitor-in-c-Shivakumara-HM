@@ -7,30 +7,16 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
   int result;
   if (input < lowLimit)
   {
-    if (language == ENGLISH)
-    {
-      displaystring(arrayOfAlertinEnglish[1]);
-    }
-    else if (language == GERMAN)
-    {
-      displaystring(arrayOfAlertinGerman[1]);
-    }
+    displaystringLowBreach(language);
     return result = 0;
   }
   else if (input < ((WARNINGPERCENTAGE *  highLimit)+lowLimit))
   {
-    if (language == ENGLISH)
-    {
-      displaystring(arrayOfAlertinEnglish[2]);
-    }
-    else if (language == GERMAN)
-    {
-      displaystring(arrayOfAlertinGerman[2]);
-    }
+    displaystringLowWarning(language);
     return result = 0;
   }
  
-return result = 1;
+  return result = 1;
 }
                                        
 
@@ -39,29 +25,15 @@ int checkHigherThreshold(float input, float highLimit, int language)
   int result;
   if (input > highLimit)
   {
-    if (language == ENGLISH)
-    {
-      displaystring(arrayOfAlertinEnglish[3]);
-    }
-    else if (language == GERMAN)
-    {
-      displaystring(arrayOfAlertinGerman[3]);
-    }
+    displaystringHighBreach(language);
     return result = 0;
   }
   else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit)))
   {
-    if (language == ENGLISH)
-    {
-      displaystring(arrayOfAlertinEnglish[4]);
-    }
-    else if (language == GERMAN)
-    {
-      displaystring(arrayOfAlertinGerman[4]);
-    }
+    displaystringHighWarning(language);
     return result = 0;
   }
-    return result = 1;
+  return result = 1;
 }
 
 /*  pure function to check Temperature range */
@@ -88,6 +60,54 @@ int IsChargRateOK(float input, float highLimit, int language)
   int ChrgeRateOK;
   ChrgeRateOK = checkHigherThreshold(input, highLimit, language);
   return ChrgeRateOK;
+}
+
+void displaystringLowBreach(int language)
+{
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertinEnglish[1]);
+    }
+    else if (language == GERMAN)
+    {
+      displaystring(arrayOfAlertinGerman[1]);
+    }
+}
+
+void displaystringLowWarning(int language)
+{
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertinEnglish[2]);
+    }
+    else if (language == GERMAN)
+    {
+      displaystring(arrayOfAlertinGerman[2]);
+    }
+}
+
+void displaystringHighBreach(int language)
+{
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertinEnglish[3]);
+    }
+    else if (language == GERMAN)
+    {
+      displaystring(arrayOfAlertinGerman[3]);
+    }
+}
+
+void displaystringHighWarning(int language)
+{
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertinEnglish[4]);
+    }
+    else if (language == GERMAN)
+    {
+      displaystring(arrayOfAlertinGerman[4]);
+    }
 }
 
 /* pure function to display string */
