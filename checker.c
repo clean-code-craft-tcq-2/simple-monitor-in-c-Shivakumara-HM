@@ -4,30 +4,30 @@
 
 int checkLowerThreshold(float input, float lowLimit, float highLimit)       
 {   
- int result = 0;
-	if (input  < lowLimit)
-	{
-	result = LOWERROR;
-	}
-	else if(input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
-	
-	  result = LOWWARNING;
-	}
-    return result;
+  int result;
+  if (input < lowLimit)
+  {
+    result = LOWERROR;
+  }
+  else if(input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
+  {
+    result = LOWWARNING;
+  }
+return result;
 }
 
 int checkHigherThreshold(float input, float highLimit, float highLimit)      
 {      
-	int result = 0;
-	if (input  > highLimit)
-	{
-	result = HIGHERROR;	 
-	}
-	else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit))
-	{
-	  result = HIGHWARNING;
-	}
-	return result;
+  int result;
+  if (input > highLimit)
+  {
+    result = HIGHERROR;	 
+  }
+  else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit))
+  {
+    result = HIGHWARNING;
+  }
+    return result;
 }
 
 /*  pure function to check Temperature range */
