@@ -83,7 +83,7 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language)
 } 
 
  /*  pure function to check charge rate */ 
-int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
+int IsChargRateOK(float input, float highLimit, int language)
 {
   int ChrgeRateOK;
   ChrgeRateOK = checkHigherThreshold(input, highLimit, language);
@@ -101,7 +101,7 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, in
 {
   int TempStatus = IsTemperatureOK(tempertaure, lowLimit, highLimit, language);
   int SocStatus  =  IsSocOK(soc, lowLimit, highLimit, language);
-  int ChargeRateStatus =  IsChargRateOK(chargerate, lowLimit, highLimit, language);
+  int ChargeRateStatus =  IsChargRateOK(chargerate, highLimit, language);
   return ((TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
 }
 
