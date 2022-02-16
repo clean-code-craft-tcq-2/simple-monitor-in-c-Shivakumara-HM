@@ -88,7 +88,7 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), int (*fpIsChargRateOK) (float), int expectedValue)
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), int (*fpIsChargRateOK) (float), enum alertLanguageID, int expectedValue)
 {
   int TempStatus = fpIsTemperatureOK(tempertaure);
   int SocStatus  =  fpIsSocOK(soc);
@@ -99,6 +99,6 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemper
 /*Testing environment*/
 int main() 
 {
-  assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, 1));
-  assert(!batteryIsOk(50, 85, 0, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, 1));
+  assert(batteryIsOk(25, 70, 0.7, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, ENGLISH, 1));
+  assert(!batteryIsOk(50, 85, 0, &IsTemperatureOK, &IsSocOK, &IsChargRateOK, GERMAN, 1));
 }
