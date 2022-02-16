@@ -9,6 +9,23 @@
 enum alertLanguageParameter[[ENGLISH]= {NORMAL, LOW_BREACH, LOW_WARNING, HIGH_WARNING, HIGH_BREACH}, 
                             [GERMAN] = {Normale, Niedrige Verletzung, Niedrige Warnung, Hohe Warnung, Hoher Bruch}]
 
+char* arrayOfAlertinEnglish[]=
+	{
+	"Battery Status: Normal ",
+	"Battery Status: Low Breach ",
+	"Battery Status: Low Warning ",
+	"Battery Status: High Warning ",
+	"Battery Status: High Breach "
+	};
+char* arrayOfAlertinGerman[]=
+	{
+	"Batteriestatus: Normale ",
+	"Batteriestatus: Niedrige Verletzung ",
+	"Batteriestatus: Niedrige Warnung ",
+	"Batteriestatus: Hohe Warnung ",
+	"Batteriestatus: Hoher Bruch "
+	};
+
 int IsTemperatureOK(float temperature);
 int IsSocOK(float soc);
 int IsChargRateOK(float chargeRate);
