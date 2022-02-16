@@ -95,7 +95,7 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK)(), int (*fpIsSocOK) (), 
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (), int (*fpIsSocOK) (), 
                 int (*fpIsChargRateOK) (), int lowLimit, int highLimit, int language, int expectedValue)
 {
   int TempStatus = fpIsTemperatureOK(tempertaure, lowLimit, highLimit, language);
