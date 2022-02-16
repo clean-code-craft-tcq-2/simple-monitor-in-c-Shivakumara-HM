@@ -16,7 +16,7 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
     }
     return result = 0;
   }
-  else (input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
+  else (input < ((WARNINGPERCENTAGE *  highLimit)+lowLimit))
   {
     if (language == ENGLISH)
     {
@@ -47,7 +47,7 @@ int checkHigherThreshold(float input, float lowLimit, float highLimit, int langu
     }
     return result = 0;
   }
-  else (input > (highLimit - (WARNINGPERCENTAGE * highLimit))
+  else (input > (highLimit - (WARNINGPERCENTAGE * highLimit)))
   {
     if (language == ENGLISH)
     {
@@ -97,9 +97,9 @@ void displaystring(char *fpdisplaystring)
 /*Code under Test*/
 int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
 {
-  int TempStatus = fpIsTemperatureOK(tempertaure, lowLimit, highLimit, language);
-  int SocStatus  =  fpIsSocOK(soc, lowLimit, highLimit, language);
-  int ChargeRateStatus =  fpIsChargRateOK(chargerate, lowLimit, highLimit, language);
+  int TempStatus = IsTemperatureOK(tempertaure, lowLimit, highLimit, language);
+  int SocStatus  =  IsSocOK(soc, lowLimit, highLimit, language);
+  int ChargeRateStatus =  IsChargRateOK(chargerate, lowLimit, highLimit, language);
   return ((TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
 }
 
