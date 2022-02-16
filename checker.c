@@ -9,10 +9,10 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
   {
     if (language == ENGLISH)
     {
-      displaystring(arrayOfAlertinEnglish, 1);
+      displaystring(arrayOfAlertinEnglish[1]);
     else
     {
-      displaystring(arrayOfAlertinGerman, 1);
+      displaystring(arrayOfAlertinGerman[1]);
     }
     return result = 0;
   }
@@ -20,11 +20,11 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
   {
     if (language == ENGLISH)
     {
-      displaystring(arrayOfAlertinEnglish, 2);
+      displaystring(arrayOfAlertinEnglish[2]);
     }
     else
     {
-      displaystring(arrayOfAlertinGerman, 2);
+      displaystring(arrayOfAlertinGerman[2]);
     }
     return result = 0;
   }
@@ -40,10 +40,10 @@ int checkHigherThreshold(float input, float lowLimit, float highLimit, int langu
   {
     if (language == ENGLISH)
     {
-      displaystring(arrayOfAlertinEnglish, 3);
+      displaystring(arrayOfAlertinEnglish[3]);
     else
     {
-      displaystring(arrayOfAlertinGerman, 3);
+      displaystring(arrayOfAlertinGerman[3]);
     }
     return result = 0;
   }
@@ -51,11 +51,11 @@ int checkHigherThreshold(float input, float lowLimit, float highLimit, int langu
   {
     if (language == ENGLISH)
     {
-      displaystring(arrayOfAlertinEnglish, 4);
+      displaystring(arrayOfAlertinEnglish[4]);
     }
     else
     {
-      displaystring(arrayOfAlertinGerman, 4);
+      displaystring(arrayOfAlertinGerman[4]);
     }
     return result = 0;
   }
@@ -89,9 +89,9 @@ int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
 }
 
 /* pure function to display string */
-void displaystring(char *fpdisplaystring, int i)
+void displaystring(char *fpdisplaystring)
 {
-  printf("%s", fpdisplaystring[i]);
+  printf("%s", fpdisplaystring);
 }
 
 /*Code under Test*/
