@@ -11,7 +11,7 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
     {
       displaystring(arrayOfAlertinEnglish[1]);
     }
-    else
+    else if (language == GERMAN)
     {
       displaystring(arrayOfAlertinGerman[1]);
     }
@@ -23,7 +23,7 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit, int langua
     {
       displaystring(arrayOfAlertinEnglish[2]);
     }
-    else
+    else if (language == GERMAN)
     {
       displaystring(arrayOfAlertinGerman[2]);
     }
@@ -43,7 +43,7 @@ int checkHigherThreshold(float input, float highLimit, int language)
     {
       displaystring(arrayOfAlertinEnglish[3]);
     }
-    else
+    else if (language == GERMAN)
     {
       displaystring(arrayOfAlertinGerman[3]);
     }
@@ -55,7 +55,7 @@ int checkHigherThreshold(float input, float highLimit, int language)
     {
       displaystring(arrayOfAlertinEnglish[4]);
     }
-    else
+    else if (language == GERMAN)
     {
       displaystring(arrayOfAlertinGerman[4]);
     }
