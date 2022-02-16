@@ -6,24 +6,21 @@
 #define ENGLISH 0
 #define GERMAN 1
 
-enum alertLanguageParameter[[ENGLISH]= {NORMAL, LOW_BREACH, LOW_WARNING, HIGH_WARNING, HIGH_BREACH}, 
-                            [GERMAN] = {Normale, Niedrige Verletzung, Niedrige Warnung, Hohe Warnung, Hoher Bruch}]
-
 char* arrayOfAlertinEnglish[]=
 	{
 	"Battery Status: Normal ",
 	"Battery Status: Low Breach ",
 	"Battery Status: Low Warning ",
-	"Battery Status: High Warning ",
 	"Battery Status: High Breach "
+	"Battery Status: High Warning ",
 	};
 char* arrayOfAlertinGerman[]=
 	{
 	"Batteriestatus: Normale ",
 	"Batteriestatus: Niedrige Verletzung ",
 	"Batteriestatus: Niedrige Warnung ",
-	"Batteriestatus: Hohe Warnung ",
 	"Batteriestatus: Hoher Bruch "
+	"Batteriestatus: Hohe Warnung ",	
 	};
 
 int IsTemperatureOK(float temperature);
