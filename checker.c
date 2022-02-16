@@ -2,35 +2,64 @@
 #include <assert.h>
 #include "checker.h"
 
-int checkLowerThreshold(float input, float lowLimit, float highLimit)       
+int checkLowerThreshold(float input, float lowLimit, float highLimit, int language)       
 {   
   int result;
   if (input < lowLimit)
   {
-    displaystring(arrayOfAlertEnglish[1]);
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertEnglish[1]);
+    else
+    {
+      displaystring(arrayOfAlertGerman[1]);
+    }
     return result = 0;
   }
   else if(input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
   {
-    displaystring(arrayOfAlertEnglish[2]);
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertEnglish[2]);
+    }
+    else
+    {
+      displaystring(arrayOfAlertGerman[2);
+    }
     return result = 0;
   }
  
 return result = 1;
 }
+                                       
 
-int checkHigherThreshold(float input, float highLimit, float highLimit)      
+int checkHigherThreshold(float input, float highLimit, float highLimit, int language)      
 {      
   int result;
   if (input > highLimit)
   {
-    result = HIGHERROR;	 
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertEnglish[3]);
+    else
+    {
+      displaystring(arrayOfAlertGerman[3]);
+    }
+    return result = 0;
   }
   else if(input > (highLimit - (WARNINGPERCENTAGE * highLimit))
   {
-    result = HIGHWARNING;
+    if (language == ENGLISH)
+    {
+      displaystring(arrayOfAlertEnglish[4]);
+    }
+    else
+    {
+      displaystring(arrayOfAlertGerman[4);
+    }
+    return result = 0;
   }
-    return result;
+    return result = 1;
 }
 
 /*  pure function to check Temperature range */
