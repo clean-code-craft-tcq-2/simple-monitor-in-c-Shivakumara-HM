@@ -63,7 +63,7 @@ int checkHigherThreshold(float input, float highLimit, float highLimit, int lang
 }
 
 /*  pure function to check Temperature range */
-int IsTemperatureOK(float temperature)
+int IsTemperatureOK(float input, float lowLimit, float highLimit, int language)
  {
   int TemperatureOK;
   TemperatureOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
@@ -72,7 +72,7 @@ int IsTemperatureOK(float temperature)
 }
 
 /*  pure function to check soc range */
-int IsSocOK(float soc)
+int IsSocOK(float input, float lowLimit, float highLimit, int language)
 {
   int SocOK;
   SocOK = checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
@@ -81,7 +81,7 @@ int IsSocOK(float soc)
 } 
 
  /*  pure function to check charge rate */ 
-int IsChargRateOK(float chargeRate)
+int IsChargRateOK(float input, float lowLimit, float highLimit, int language)
 {
   int ChrgeRateOK;
   ChrgeRateOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
@@ -125,11 +125,12 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), int (*fpIsChargRateOK) (float), enum alertLanguageID, int expectedValue)
+int batteryIsOk(float tempertaure, float soc, float chargerate, int (*fpIsTemperatureOK) (float), int (*fpIsSocOK) (float), 
+                int (*fpIsChargRateOK) (float), int language, int expectedValue)
 {
-  int TempStatus = fpIsTemperatureOK(tempertaure);
-  int SocStatus  =  fpIsSocOK(soc);
-  int ChargeRateStatus =  fpIsChargRateOK(chargerate);
+  int TempStatus = fpIsTemperatureOK(tempertaure, lowLimit, highLimit, language);
+  int SocStatus  =  fpIsSocOK(soc, lowLimit, highLimit, language);
+  int ChargeRateStatus =  fpIsChargRateOK(chargerate, lowLimit, highLimit, language);
   return ((TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
 }
 
