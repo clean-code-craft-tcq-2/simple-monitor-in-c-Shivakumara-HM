@@ -28,4 +28,4 @@ int IsSocOK(float input, float lowLimit, float highLimit, int language);
 int IsChargRateOK(float input, float lowLimit, float highLimit, int language);
 int checkLowerThreshold(float input, float lowLimit, float highLimit, int language);
 int checkHigherThreshold(float input,  float lowLimit, float highLimit, int language);   
-void displaystring(char *fpdisplaystring, int i);
+void displaystring(char *fpdisplaystring);
