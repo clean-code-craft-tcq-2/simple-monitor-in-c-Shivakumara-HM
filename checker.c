@@ -7,13 +7,16 @@ int checkLowerThreshold(float input, float lowLimit, float highLimit)
   int result;
   if (input < lowLimit)
   {
-    result = LOWERROR;
+    displaystring(arrayOfAlertEnglish[1]);
+    return result = 0;
   }
   else if(input < (WARNINGPERCENTAGE *  highLimit)+lowLimit)
   {
-    result = LOWWARNING;
+    displaystring(arrayOfAlertEnglish[2]);
+    return result = 0;
   }
-return result;
+ 
+return result = 1;
 }
 
 int checkHigherThreshold(float input, float highLimit, float highLimit)      
