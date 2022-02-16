@@ -1,5 +1,6 @@
 #define MIN_THRESHOLD 20
 #define MAX_THRESHOLD 80
+#define WARNINGPERCENTAGE 5
 #define ENGLISH 0
 #define GERMAN 1
 
