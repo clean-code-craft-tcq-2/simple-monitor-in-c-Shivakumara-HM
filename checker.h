@@ -4,7 +4,7 @@
 #define ENGLISH 0
 #define GERMAN 1
 
-char* arrayOfAlertinEnglish[]=
+char arrayOfAlertinEnglish[]=
 	{
 	"Battery Status: Normal ",
 	"Battery Status: Low Breach ",
@@ -12,7 +12,7 @@ char* arrayOfAlertinEnglish[]=
 	"Battery Status: High Breach "
 	"Battery Status: High Warning ",
 	};
-char* arrayOfAlertinGerman[]=
+char arrayOfAlertinGerman[]=
 	{
 	"Batteriestatus: Normale ",
 	"Batteriestatus: Niedrige Verletzung ",
