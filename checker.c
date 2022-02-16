@@ -83,12 +83,9 @@ int IsSocOK(float soc)
  /*  pure function to check charge rate */ 
 int IsChargRateOK(float chargeRate)
 {
-  if(chargeRate >= MAX_THRESHOLD_BATT_CHARGE_RATE)
-  {
-    printf("Charge Rate out of range!\n");
-    return 0;
-  }
-  return 1;
+  int ChrgeRateOK;
+  ChrgeRateOK = checkHigherThreshold(float input, float highLimit, float highLimit, int language);
+  return ChrgeRateOK;
 }
 
 /* pure function to check temperature High or Low */
