@@ -122,7 +122,7 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
+int batteryIsOk(float tempertaure, char unit, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
 {
   if (temperature == 'F')
   {
@@ -141,6 +141,6 @@ int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, in
 /*Testing environment*/
 int main() 
 {
-  assert(batteryIsOk(25, 70, 0.7, MIN_THRESHOLD, MAX_THRESHOLD, ENGLISH, 1));
-  assert(!batteryIsOk(50, 85, 0, MIN_THRESHOLD, MAX_THRESHOLD, GERMAN, 1));
+  assert(batteryIsOk(25, 'F', 70, 0.7, MIN_THRESHOLD, MAX_THRESHOLD, ENGLISH, 1));
+  assert(!batteryIsOk(50, 'C', 85, 0, MIN_THRESHOLD, MAX_THRESHOLD, GERMAN, 1));
 }
