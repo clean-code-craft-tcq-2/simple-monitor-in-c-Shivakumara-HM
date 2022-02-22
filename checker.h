@@ -22,7 +22,7 @@ char* arrayOfAlertinGerman[5]=
 	};
 
 int batteryIsOk(float temperature, char unit, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue);
-int ConvertFarenheitToCelcius(temperature, lowLimit, highLimit, language);
+int ConvertFarenheitToCelcius(float temperature, float lowLimit, float highLimit, float language);
 int IsTemperatureOK(float input, float lowLimit, float highLimit, int language);
 int IsSocOK(float input, float lowLimit, float highLimit, int language);
 int IsChargRateOK(float input, float highLimit, int language);
