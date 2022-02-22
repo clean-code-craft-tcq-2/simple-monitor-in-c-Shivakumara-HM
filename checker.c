@@ -122,7 +122,7 @@ void displaystring(char *fpdisplaystring)
 }
 
 /*Code under Test*/
-int batteryIsOk(float tempertaure, char unit, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
+int batteryIsOk(float temperature, char unit, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
 {
   if (temperature == 'F')
   {
