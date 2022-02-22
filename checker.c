@@ -38,7 +38,7 @@ int checkHigherThreshold(float input, float highLimit, int language)
 
 int ConvertFarenheitToCelcius(temperature, lowLimit, highLimit, language)
 {
-  float temperature = ((farenheit - 32) * 5 / 9);
+  float temperature = ((temperature - 32) * 5 / 9);
   return(IsTemperatureOK(temperature, lowLimit, highLimit, language));
 }
 
