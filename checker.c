@@ -36,6 +36,11 @@ int checkHigherThreshold(float input, float highLimit, int language)
   return result = 1;
 }
 
+float ConvertFarenheitToCelcius(float farenheit)
+{
+  return ((farenheit - 32) * 5 / 9);
+}
+
 /*  pure function to check Temperature range */
 int IsTemperatureOK(float input, float lowLimit, float highLimit, int language)
  {
@@ -119,7 +124,15 @@ void displaystring(char *fpdisplaystring)
 /*Code under Test*/
 int batteryIsOk(float tempertaure, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
 {
+  if (temperature == 'F')
+  {
+  temperature = ConvertFarenheitToCelcius(tempertaure);
   int TempStatus = IsTemperatureOK(tempertaure, lowLimit, highLimit, language);
+  }
+  else
+  {
+    int TempStatus = IsTemperatureOK(tempertaure, lowLimit, highLimit, language);
+  }
   int SocStatus  =  IsSocOK(soc, lowLimit, highLimit, language);
   int ChargeRateStatus =  IsChargRateOK(chargerate, highLimit, language);
   return ((TempStatus && SocStatus && ChargeRateStatus) == expectedValue);
