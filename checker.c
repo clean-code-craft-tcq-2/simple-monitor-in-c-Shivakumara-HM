@@ -125,13 +125,14 @@ void displaystring(char *fpdisplaystring)
 /*Code under Test*/
 int batteryIsOk(float temperature, char unit, float soc, float chargerate, int lowLimit, int highLimit, int language, int expectedValue)
 {
+  int TempStatus;
   if (temperature == 'F')
   {
-  int TempStatus = ConvertFarenheitToCelcius(temperature, lowLimit, highLimit, language);
+    TempStatus = ConvertFarenheitToCelcius(temperature, lowLimit, highLimit, language);
   }
   else
   {
-    int TempStatus = IsTemperatureOK(temperature, lowLimit, highLimit, language);
+    TempStatus = IsTemperatureOK(temperature, lowLimit, highLimit, language);
   }
   int SocStatus  =  IsSocOK(soc, lowLimit, highLimit, language);
   int ChargeRateStatus =  IsChargRateOK(chargerate, highLimit, language);
