@@ -126,7 +126,7 @@ int batteryIsOk(float tempertaure, char unit, float soc, float chargerate, int l
 {
   if (temperature == 'F')
   {
-  temperature = ConvertFarenheitToCelcius(tempertaure);
+  float temperature = ConvertFarenheitToCelcius(tempertaure);
   int TempStatus = IsTemperatureOK(tempertaure, lowLimit, highLimit, language);
   }
   else
